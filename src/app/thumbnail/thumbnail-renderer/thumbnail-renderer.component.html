@@ -1,0 +1,65 @@
+<button (click)="grid = !grid">grille</button>
+<div #screen>
+  <ng-container *ngIf="!grid; else elseTemplate">
+    <div class="card card--horizontal">
+      <div class="thumbnail__container">
+        <img src="{{ thumbnail.thumbnailUrl }}" />
+        <div class="duration">
+          {{ thumbnail.duration | youtubeTime }}
+        </div>
+      </div>
+      <div class="card__content">
+        <h2 class="title">
+          {{ thumbnail.title }}
+        </h2>
+        <div>
+          {{ thumbnail.viewCount | numberProcess: 1 }} de vues •
+          {{ thumbnail.publishedAt | timeAgo }}
+        </div>
+        <div class="channel__info">
+          <img
+            class="channel__thumnail"
+            src="{{ thumbnail.channelThumbnailUrl }}"
+          />
+          {{ thumbnail.channelTitle }}
+        </div>
+        {{
+          thumbnail.description.length > 98
+            ? (thumbnail.description | slice: 0:98) + ".."
+            : thumbnail.description
+        }}
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <div class="card card--vertical">
+      <div class="thumbnail__container">
+        <img src="{{ thumbnail.thumbnailUrl }}" />
+        <div class="duration">
+          {{ thumbnail.duration | youtubeTime }}
+        </div>
+      </div>
+      <div class="card__content">
+        <h2 class="title">
+          {{ thumbnail.title }}
+        </h2>
+        <div>
+          {{ thumbnail.viewCount | numberProcess: 1 }} de vues •
+          {{ thumbnail.publishedAt | timeAgo }}
+        </div>
+        <div class="channel__info">
+          {{ thumbnail.channelTitle }}
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+<button class="button__fixed" mat-fab color="primary" (click)="downloadImage()">
+  download
+</button>
+
+<div id="download">
+  <img #canvas />
+  <a #downloadLink></a>
+</div>

@@ -1,0 +1,18 @@
+<div>
+  <h1>Thumbnail Downloader</h1>
+  <form (submit)="onSubmit()">
+    <div class="form-group">
+      <label for="url">URL</label>
+      <input
+        type="text"
+        class="form-control"
+        id="url"
+        name="url"
+        [(ngModel)]="url"
+        placeholder="Enter URL"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,86 @@
+.card {
+  font-family: Roboto, Arial, sans-serif;
+}
+.card--horizontal {
+  display: flex;
+  gap: 15px;
+  max-width: 1096px;
+  color: rgb(96, 96, 96);
+  font-size: 1.2rem;
+}
+.title {
+  margin: 0;
+  font-weight: 400;
+  min-width: 0;
+  color: black;
+  margin-bottom: 5px;
+  overflow: hidden;
+}
+.channel__thumnail {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 22px;
+  height: 22px;
+}
+
+.thumbnail__container {
+  position: relative;
+  width: 360px;
+  height: 202px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.duration {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 4px;
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 3px 4px;
+  height: 12px;
+  border-radius: 2px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.2rem;
+  letter-spacing: 0.35px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  display: inline-flex;
+}
+
+.channel__info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 0;
+}
+
+.card--vertical {
+  display: flex;
+  flex-direction: column;
+  max-width: 210px;
+  color: rgb(96, 96, 96);
+  font-size: 1.2rem;
+  .card__content {
+    padding-right: 12px;
+  }
+  .title {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin: 8px 0 8px;
+  }
+  .thumbnail__container {
+    width: 210px;
+    height: 118px;
+  }
+}

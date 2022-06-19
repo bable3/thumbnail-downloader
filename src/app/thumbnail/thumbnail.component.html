@@ -1,0 +1,5 @@
+<thumbnail-form (onSubmitEmitter)="generateThumbnail($event)"></thumbnail-form>
+<thumbnail-renderer
+  [thumbnail]="thumbnail"
+  *ngIf="isThumbnailGenerated"
+></thumbnail-renderer>
